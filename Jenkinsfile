@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        PATH = "/opt/homebrew/bin:$PATH"  // Ensure the correct path for binaries like pytest
+        // Ensure PATH is correctly set
+        PATH = "/opt/homebrew/bin:$PATH"
     }
 
     stages {
@@ -15,6 +16,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Test stage.'
+                // Correct command to run pytest
                 sh '/opt/homebrew/bin/pytest test_mod.py --alluredir=allure-results'
             }
         }
