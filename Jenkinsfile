@@ -10,7 +10,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Test stage.'
-                sh "/opt/homebrew/bin/pytest test_mod.py --alluredir=allure-results"
+                sh 'bash -c "/opt/homebrew/bin/pytest test_mod.py --alluredir=allure-results"'
+
             }
         }
     }
